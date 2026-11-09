@@ -1,5 +1,7 @@
 # Proyecto Spring Boot: catalogo de libros
 
+**Autor:** Jonathan de Jesus Navarro Vazquez
+
 Aplicacion web desarrollada con Spring Boot para practicar controladores REST,
 vistas Thymeleaf, DTOs, formularios y parametros de URL. El ejemplo principal
 utiliza un catalogo de libros.
@@ -267,7 +269,7 @@ URL:
 http://localhost:9526/libros
 ```
 
-<!-- Agregar aqui la captura del listado de libros. -->
+![Listado de libros](src/images/libros.png)
 
 ### 2. Formulario con @ModelAttribute
 
@@ -277,7 +279,7 @@ URL:
 http://localhost:9526/libros/nuevo
 ```
 
-<!-- Agregar aqui la captura del formulario. -->
+![Formulario de registro](src/images/libros-nuevo.png)
 
 ### 3. Resultado del filtro con @RequestParam
 
@@ -287,7 +289,7 @@ URL:
 http://localhost:9526/libros?categoria=Tecnologia
 ```
 
-<!-- Agregar aqui la captura del resultado filtrado. -->
+![Filtro por categoria](src/images/libros-tecnologia.png)
 
 ### 4. Resultado del detalle con @PathVariable
 
@@ -297,7 +299,7 @@ URL:
 http://localhost:9526/libros/2
 ```
 
-<!-- Agregar aqui la captura del detalle. -->
+![Detalle del libro](src/images/libros-2.png)
 
 ### 5. Peticion POST en Postman o Bruno
 
@@ -309,7 +311,17 @@ http://localhost:9526/api/libros
 
 Metodo: `POST`
 
-<!-- Agregar aqui la captura de la peticion y respuesta JSON. -->
+![Peticion POST REST](src/images/api-libros.png)
+
+### 6. Endpoint REST con @Value
+
+URL:
+
+```text
+http://localhost:9526/api/variable/valores
+```
+
+![Valores de configuracion](src/images/valores.png)
 
 ## Pruebas
 
