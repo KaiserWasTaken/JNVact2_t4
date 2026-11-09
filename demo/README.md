@@ -259,8 +259,6 @@ como respuesta JSON.
 
 ## Secciones para capturas de pantalla
 
-Las siguientes secciones quedan preparadas para agregar capturas manualmente.
-
 ### 1. Vista del listado con th:each
 
 URL:
