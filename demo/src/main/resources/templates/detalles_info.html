@@ -6,7 +6,44 @@
     <title th:text="${Titulo}">Pagina String Boot</title>
 </head>
 <body>
-    <p>Servidor: <span th:text="${Servidor}"></span></p>
-    <p>IP: <span th:text="${Ip}"></span></p>
+    <h1>Informacion del Empleado</h1>
+    <ul>
+        <li><strong>Nombre:</strong> <span th:text="${Empleado.nombre}"></span></li>
+        <li><strong>Apellido:</strong> <span th:text="${Empleado.apellido}"></span></li>
+        <li>
+            <strong>Direccion:</strong> 
+            <span th:text="${Empleado.direccion != null ? Empleado.direccion : 'No disponible'}"></span>
+        </li>
+        <li><strong>Puesto:</strong> <span th:text="${Empleado.puesto}"></span></li>
+        <li><strong>Edad:</strong> <span th:text="${Empleado.edad}"></span></li>
+        <li><strong>Telefono:</strong> <span th:text="${Empleado.telefono}"></span></li>
+        <li><strong>ID:</strong> <span th:text="${Empleado.id}"></span></li>
+    </ul>   
+    
+    <h1>Lista de Empleados</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Direccion</th>
+                    <th>Puesto</th>
+                    <th>Edad</th>
+                    <th>Telefono</th>
+                    <th>ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="empleado : ${empleados}">
+                    <td th:text="${empleado.nombre}"></td>
+                    <td th:text="${empleado.apellido}"></td>
+                    <td th:text="${empleado.direccion != null ? empleado.direccion : 'No disponible'}"></td>
+                    <td th:text="${empleado.puesto}"></td>
+                    <td th:text="${empleado.edad}"></td>
+                    <td th:text="${empleado.telefono}"></td>
+                    <td th:text="${empleado.id}"></td>
+                </tr>
+            </tbody>
+        </table>
 </body>
 </html>

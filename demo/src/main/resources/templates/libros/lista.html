@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${nombreCatalogo}">Catalogo de libros</title>
+</head>
+<body>
+    <h1 th:text="${nombreCatalogo}">Catalogo de libros</h1>
+
+    <form method="get" th:action="@{/libros}">
+        <label for="categoria">Filtrar por categoria:</label>
+        <input id="categoria" name="categoria" th:value="${categoriaActual}">
+        <button type="submit">Filtrar</button>
+        <a th:href="@{/libros}">Ver todos</a>
+    </form>
+
+    <p><a th:href="@{/libros/nuevo}">Registrar libro</a></p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Autor</th>
+                <th>Categoria</th>
+                <th>Precio</th>
+                <th>Detalle</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="libro : ${libros}">
+                <td th:text="${libro.id}"></td>
+                <td th:text="${libro.titulo}"></td>
+                <td th:text="${libro.autor}"></td>
+                <td th:text="${libro.categoria}"></td>
+                <td th:text="${libro.precio}"></td>
+                <td><a th:href="@{/libros/{id}(id=${libro.id})}">Ver</a></td>
+            </tr>
+            <tr th:if="${#lists.isEmpty(libros)}">
+                <td colspan="6">No se encontraron libros.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

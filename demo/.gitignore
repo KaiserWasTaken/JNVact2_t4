@@ -40,3 +40,12 @@ build/
 application-local.properties
 application-local.yml
 **/secrets.properties
+
+### Archivos del sistema ###
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+### Artefactos compilados ###
+*.class
+*.jar
